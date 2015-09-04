@@ -1,0 +1,12 @@
+
+  def extract_points(page)
+    page.search('.subtext > span:first-child').map { |span| span.inner_text}
+  end
+
+  def extract_item_id(page)
+    page.search('.subtext > a:nth-child(3)').map {|link| link['href'] }
+  end
+
+  def extract_title(page)
+    puts page.css('title')[0].text
+  end 
